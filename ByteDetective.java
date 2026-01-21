@@ -10,7 +10,7 @@ import java.io.*;
  */
 public class ByteDetective {
     // Path to the mystery file (same directory as this .java file)
-    private static final String MYSTERY_FILE = "C:\\Users\\huzai\\IdeaProjects\\ByteDetective\\src\\mystery.bin";
+    private static final String MYSTERY_FILE = "mystery.bin";
 
     /**
      * Task 1: Read and return the first byte from the file.
@@ -121,8 +121,6 @@ public class ByteDetective {
     /**
      * Task 5: Analyze the file and display statistics.
      *
-     * TODO: Implement this method
-     *
      * Requirements:
      * - Count total bytes
      * - Track minimum byte value (hint: start at 256)
@@ -140,21 +138,12 @@ public class ByteDetective {
      * Average: 78.5
      */
     public static void analyzeFile() {
-        // TODO: Initialize tracking variables:
-        //       int count = 0;
-        //       int min = 256;  (start higher than any byte)
-        //       int max = -1;   (start lower than any byte)
-        //       long sum = 0;   (use long to avoid overflow)
+
         int count = 0;
         int min = 256;
         int max = -1;
         long sum = 0;
-        // TODO: Read file with standard loop
-        //       Inside loop:
-        //         - Increment count
-        //         - Update min if byteValue < min
-        //         - Update max if byteValue > max
-        //         - Add byteValue to sum
+
         try (FileInputStream fis = new FileInputStream(MYSTERY_FILE)) {
             int b;
             while ((b = fis.read()) != -1) {
@@ -171,11 +160,7 @@ public class ByteDetective {
         } catch (IOException e) {
             System.err.println("Error reading file: " + e.getMessage());
         }
-        // TODO: After loop, calculate and display:
-        //       - Total bytes (count)
-        //       - Min value
-        //       - Max value
-        //       - Average (sum / count as a double)
+
         System.out.println("Total bytes: " + count +
                 "\nMin value: " + min +
                 "\nMax value: " + max +
